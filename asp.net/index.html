@@ -123,6 +123,54 @@
       
       
         
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../accessibility/tools/" class="md-tabs__link">
+          Accessibility
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Asp.net
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -326,6 +374,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#debugging-for-vs" class="md-nav__link">
+    Debugging for VS
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -412,6 +467,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#debugging-for-vs" class="md-nav__link">
+    Debugging for VS
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -428,8 +490,8 @@
                   
                 
                 
-                <h1 id="aspnet-4-web-forms">ASP.Net 4 Web Forms</h1>
-<h2 id="net-framework">.NET Framework</h2>
+                <h1 id="aspnet-4-web-forms">ASP.Net 4 Web Forms<a class="headerlink" href="#aspnet-4-web-forms" title="Permanent link">&para;</a></h1>
+<h2 id="net-framework">.NET Framework<a class="headerlink" href="#net-framework" title="Permanent link">&para;</a></h2>
 <ul>
 <li>C# is the .NET framework language</li>
 <li>A software library with a runtime environment (for execution)<ul>
@@ -438,45 +500,65 @@
 </ul>
 </li>
 </ul>
-<h2 id="tools">Tools:</h2>
+<h2 id="tools">Tools:<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 <ul>
 <li>IDE: Visual Studio </li>
 </ul>
-<h2 id="helloworld">HelloWorld</h2>
-<pre><code class="csharp">//main.cs
-using System;
+<h2 id="helloworld">HelloWorld<a class="headerlink" href="#helloworld" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="c1">//main.cs</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
 
-class MainClass {
-  public static void Main (string[] args) {
-    Console.WriteLine (&quot;Hello World&quot;);
-     Console.ReadKey();
-  }
-}
-</code></pre>
+<span class="k">class</span> <span class="nc">MainClass</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span> <span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">);</span>
+     <span class="n">Console</span><span class="p">.</span><span class="n">ReadKey</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
-<iframe height="400px" width="100%" src="https://repl.it/repls/ThoseLowestBoastmachine?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-<h2 id="solution">Solution</h2>
+<iframe height="800px" width="100%" src="https://repl.it/repls/ThoseLowestBoastmachine?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <ul>
 <li>A group of several projects (eg. Windows Forms app + Website)</li>
 </ul>
-<h2 id="namespaces">Namespaces</h2>
+<h2 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Grouping of spaces that have something similar to each other<ul>
 <li>Java equivalent: package names </li>
 </ul>
 </li>
 </ul>
-<h2 id="methods">Methods</h2>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Access Modifiers: private, public, protected, internal, protected internal</li>
 <li><code>accessModifier returnType methodName (returnType par1, returnType par2){}</code></li>
 </ul>
-<h2 id="static">Static</h2>
+<h2 id="static">Static<a class="headerlink" href="#static" title="Permanent link">&para;</a></h2>
 <ul>
 <li>static methods can only access other static methods from within the same class</li>
 <li><code>accessModifier [optional static] returnType methodName (returnType par1, returnType par2){}</code></li>
 </ul>
+<h2 id="debugging-for-vs">Debugging for VS<a class="headerlink" href="#debugging-for-vs" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Continue - F5</li>
+<li>Step into - F11</li>
+<li>Step over - F10</li>
+</ul>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: May 15, 2020
+    
+  </small>
+</div>
+                  
                 
               
               
@@ -535,7 +617,7 @@ class MainClass {
       <script>
         app = initialize({
           base: "..",
-          features: [],
+          features: ["tabs", "instant"],
           search: Object.assign({
             worker: "../assets/javascripts/worker/search.37585f48.min.js"
           }, typeof search !== "undefined" && search)
