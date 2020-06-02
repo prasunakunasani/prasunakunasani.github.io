@@ -247,6 +247,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../testing/" title="Testing" class="md-nav__link">
+      Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -314,6 +326,13 @@
         <li class="md-nav__item">
   <a href="#ones-that-need-review-before-adding-to-the-list" class="md-nav__link">
     Ones that need review before adding to the list:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-wave" class="md-nav__link">
+    How to use Wave
   </a>
   
 </li>
@@ -444,6 +463,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-use-wave" class="md-nav__link">
+    How to use Wave
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -525,7 +551,12 @@
 </li>
 </ul>
 </li>
-<li><strong>Chrome Specific:</strong><ul>
+<li><strong>Chrome/Firefox Specific:</strong><ul>
+<li>Wave Tool <a href="https://wave.webaim.org/">https://wave.webaim.org/</a> <ul>
+<li>Evaluates webpages for errors and failures </li>
+<li>Only works for public pages but chrome and firefox extensions are available</li>
+</ul>
+</li>
 <li>Accessibility Insights  <a href="https://accessibilityinsights.io/en/">https://accessibilityinsights.io/en/</a><ul>
 <li>Has chrome extension that can be used to check for common accessibility issues</li>
 </ul>
@@ -546,6 +577,7 @@
 </ul>
 </li>
 <li>Chrome extension colour contrast checker: <a href="https://chrome.google.com/webstore/detail/colour-contrast-checker/nmmjeclfkgjdomacpcflgdkgpphpmnfe?hl=en">https://chrome.google.com/webstore/detail/colour-contrast-checker/nmmjeclfkgjdomacpcflgdkgpphpmnfe?hl=en</a></li>
+<li>Wave Tool Colour Contrast Tab</li>
 </ul>
 </li>
 <li>WEB Accessibility for Canada.ca <a href="https://t716.bitbucket.io/index-en.html">https://t716.bitbucket.io/index-en.html</a></li>
@@ -554,8 +586,25 @@
 <li>Fix 85% of your Web Accessibility issues in 5 easy steps <a href="https://dev.to/alvaromontoro/fix-85-of-your-web-accessibility-issues-in-5-easy-steps-pnf">https://dev.to/alvaromontoro/fix-85-of-your-web-accessibility-issues-in-5-easy-steps-pnf</a></li>
 <li>Text Links: Best Practices for Screen Readers <a href="https://www.deque.com/blog/text-links-practices-screen-readers/">https://www.deque.com/blog/text-links-practices-screen-readers/</a></li>
 <li>The Web Accessibility Introduction I Wish I had <a href="https://dev.to/maxwell_dev/the-web-accessibility-introduction-i-wish-i-had-4ope">https://dev.to/maxwell_dev/the-web-accessibility-introduction-i-wish-i-had-4ope</a></li>
+<li>Automated Accessiblity Testing: <a href="https://www.deque.com/axe/">https://www.deque.com/axe/</a><ul>
 <li>Automated Source Code Accessibility Checker: <a href="https://github.com/marketplace/axe-linter">https://github.com/marketplace/axe-linter</a></li>
 </ul>
+</li>
+</ul>
+<h2 id="how-to-use-wave">How to use Wave<a class="headerlink" href="#how-to-use-wave" title="Permanent link">&para;</a></h2>
+<p><iframe width="789" height="444" src="https://www.youtube.com/embed/ITUDiTgAZY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+* Shows Errors, Contrast Errors, Alerts, Features, Structural Elements and ARIA
+* RED is bad (errors, Contrast Errors)
+    * definitely should be fixed
+    * Zero errors DOES NOT mean it's accessible. Need a human to determine that. 
+* Orange for items such as duplicate, long or weird alternate text, form label issues, skipped heading levels, bad links
+    * may or not need to be fixed. 
+* Green are for features that are good already and exist on the site
+    * features still need to be evaluated to be sure but are stuff like alternate text, form labels, field sets, skip links, etc
+* Blue are for structural elements
+    * can be used properly or improperly but includes stuff like headings, hierarchy, lists, navigation, content regions,data tables, etc
+* Purple icons are for ARIA
+    * additional tags that can be added to HTML so assistive technologies can parse content better</p>
                 
                   
                     
@@ -564,7 +613,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: May 29, 2020
+      Last update: June 2, 2020
     
   </small>
 </div>
@@ -587,7 +636,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../accessibility/" title="Web Accessibility" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../testing/" title="Testing" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -596,7 +645,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Web Accessibility
+                Testing
               </div>
             </div>
           </a>
