@@ -173,6 +173,19 @@
   
     <li class="md-tabs__item">
       
+        <a href="../../databases/sqlserver/" class="md-tabs__link">
+          Databases
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
         <a href="../../development/api/" class="md-tabs__link">
           Development
         </a>
@@ -465,13 +478,55 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
+      Databases
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Databases" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../databases/sqlserver/" title="MS SQL Server" class="md-nav__link">
+      MS SQL Server
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
       Development
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Development" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -639,27 +694,45 @@
 </ul>
 <h2 id="accessibility-checker-for-public-sites">Accessibility checker for public sites:<a class="headerlink" href="#accessibility-checker-for-public-sites" title="Permanent link">&para;</a></h2>
 <h3 id="wave">Wave<a class="headerlink" href="#wave" title="Permanent link">&para;</a></h3>
-<p>Site + Browser Extension Wave Tool <a href="https://wave.webaim.org/">https://wave.webaim.org/</a>
-    * Shows Errors, Contrast Errors, Alerts, Features, Structural Elements and ARIA
-    * RED is bad (errors, Contrast Errors)
-        * definitely should be fixed
-    * Orange for items such as duplicate, long or weird alternate text, form label issues, skipped heading levels, bad links
-        * may or not need to be fixed. 
-    * Green are for features that are good already and exist on the site
-        * features still need to be evaluated to be sure but are stuff like alternate text, form labels, field sets, skip links, etc
-    * Blue are for structural elements
-        * can be used properly or improperly but includes stuff like headings, hierarchy, lists, navigation, content regions,data tables, etc
-    * Purple icons are for ARIA
-        * additional tags that can be added to HTML so assistive technologies can parse content better 
-    * Pros: 
-        * Semi automated in a way since it'll go through the tags itself
-        * Evaluates web pages for errors and failures 
-    * Cons: 
-        * Each page needs to be tested individually 
-        * Only works for public pages
-        * Zero errors DOES NOT mean it's accessible. Need a human to determine that. 
-    * How to use: 
-        <iframe width="789" height="444" src="https://www.youtube.com/embed/ITUDiTgAZY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<ul>
+<li>Site + Browser Extension Wave Tool <a href="https://wave.webaim.org/">https://wave.webaim.org/</a><ul>
+<li>Shows Errors, Contrast Errors, Alerts, Features, Structural Elements and ARIA</li>
+<li>RED is bad (errors, Contrast Errors)<ul>
+<li>definitely should be fixed</li>
+</ul>
+</li>
+<li>Orange for items such as duplicate, long or weird alternate text, form label issues, skipped heading levels, bad links<ul>
+<li>may or not need to be fixed. </li>
+</ul>
+</li>
+<li>Green are for features that are good already and exist on the site<ul>
+<li>features still need to be evaluated to be sure but are stuff like alternate text, form labels, field sets, skip links, etc</li>
+</ul>
+</li>
+<li>Blue are for structural elements<ul>
+<li>can be used properly or improperly but includes stuff like headings, hierarchy, lists, navigation, content regions,data tables, etc</li>
+</ul>
+</li>
+<li>Purple icons are for ARIA<ul>
+<li>additional tags that can be added to HTML so assistive technologies can parse content better </li>
+</ul>
+</li>
+<li>Pros: <ul>
+<li>Semi automated in a way since it'll go through the tags itself</li>
+<li>Evaluates web pages for errors and failures </li>
+</ul>
+</li>
+<li>Cons: <ul>
+<li>Each page needs to be tested individually </li>
+<li>Only works for public pages</li>
+<li>Zero errors DOES NOT mean it's accessible. Need a human to determine that. </li>
+</ul>
+</li>
+<li>How to use: 
+    <iframe width="789" height="444" src="https://www.youtube.com/embed/ITUDiTgAZY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+</ul>
+</li>
+</ul>
 <h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Accessibility Insights  <a href="https://accessibilityinsights.io/en/">https://accessibilityinsights.io/en/</a><ul>
@@ -693,12 +766,10 @@
 </li>
 <li>How to use (Eg project): <ul>
 <li>Need <code>npm</code> installed first. Then: </li>
-<li>Using npm, install grunt, grunt-cli(globally) and grunt-axe-webdriver. 
-<iframe frameborder="0" width="100%" height="500px" src="https://repl.it/repls/TreasuredAggravatingReality?lite=true"></iframe>
-.....
-<iframe height="400px" width="100%" src="https://repl.it/@prasunakunasani/TreasuredAggravatingReality?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-.....</li>
+<li>Using npm, install grunt, grunt-cli(globally) and grunt-axe-webdriver. </li>
 <li>Can run <code>grunt axe-webdriver</code> to start test</li>
+<li>Repl eg jut to see simple code and test (won't work if you try to run it within)
+<iframe frameborder="0" width="100%" height="500px" src="https://repl.it/repls/TreasuredAggravatingReality?lite=true"></iframe></li>
 </ul>
 </li>
 </ul>
@@ -758,7 +829,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 4, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 14, 2020</span>
     
   </small>
 </div>
