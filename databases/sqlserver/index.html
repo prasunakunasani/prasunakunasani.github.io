@@ -439,9 +439,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-do-a-va-through-ssms" class="md-nav__link">
-    How to do a VA through SSMS
+  <a href="#how-to-find-va-through-ssms" class="md-nav__link">
+    How to find VA through SSMS
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-find-va-through-azure-portal-for-a-sql-server-deployed-on-a-machine" class="md-nav__link">
+    How to find VA through Azure Portal for a SQL server deployed on a machine
+  </a>
+  
+    <nav class="md-nav" aria-label="How to find VA through Azure Portal for a SQL server deployed on a machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#these-paths-dont-work" class="md-nav__link">
+    These paths don't work:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -455,6 +475,41 @@
           <li class="md-nav__item">
   <a href="#va1051" class="md-nav__link">
     VA1051
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#va1219" class="md-nav__link">
+    VA1219
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#va1287" class="md-nav__link">
+    VA1287
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#va2109" class="md-nav__link">
+    VA2109
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#va1286" class="md-nav__link">
+    VA1286
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#va" class="md-nav__link">
+    VA
   </a>
   
 </li>
@@ -552,9 +607,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-do-a-va-through-ssms" class="md-nav__link">
-    How to do a VA through SSMS
+  <a href="#how-to-find-va-through-ssms" class="md-nav__link">
+    How to find VA through SSMS
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-find-va-through-azure-portal-for-a-sql-server-deployed-on-a-machine" class="md-nav__link">
+    How to find VA through Azure Portal for a SQL server deployed on a machine
+  </a>
+  
+    <nav class="md-nav" aria-label="How to find VA through Azure Portal for a SQL server deployed on a machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#these-paths-dont-work" class="md-nav__link">
+    These paths don't work:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -568,6 +643,41 @@
           <li class="md-nav__item">
   <a href="#va1051" class="md-nav__link">
     VA1051
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#va1219" class="md-nav__link">
+    VA1219
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#va1287" class="md-nav__link">
+    VA1287
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#va2109" class="md-nav__link">
+    VA2109
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#va1286" class="md-nav__link">
+    VA1286
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#va" class="md-nav__link">
+    VA
   </a>
   
 </li>
@@ -595,12 +705,31 @@
                 
                 <h1 id="ms-sql-server">MS SQL Server<a class="headerlink" href="#ms-sql-server" title="Permanent link">&para;</a></h1>
 <h2 id="vulnerability-assessment">Vulnerability Assessment<a class="headerlink" href="#vulnerability-assessment" title="Permanent link">&para;</a></h2>
-<h3 id="how-to-do-a-va-through-ssms">How to do a VA through SSMS<a class="headerlink" href="#how-to-do-a-va-through-ssms" title="Permanent link">&para;</a></h3>
+<h3 id="how-to-find-va-through-ssms">How to find VA through SSMS<a class="headerlink" href="#how-to-find-va-through-ssms" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Source: <a href="https://docs.microsoft.com/en-us/sql/relational-databases/security/sql-vulnerability-assessment?view=sql-server-ver15">https://docs.microsoft.com/en-us/sql/relational-databases/security/sql-vulnerability-assessment?view=sql-server-ver15</a></li>
 <li>Open Microsoft SQL Server Management Studio</li>
 <li>Right click database-&gt;Tasks-&gt;Vulnerability Assessment-&gt;Scan For Vulnerabilities</li>
 <li>Should open up a Vulnerability Assessment Results tab + a JSON file that's saved on the computer</li>
+</ul>
+<h3 id="how-to-find-va-through-azure-portal-for-a-sql-server-deployed-on-a-machine">How to find VA through Azure Portal for a SQL server deployed on a machine<a class="headerlink" href="#how-to-find-va-through-azure-portal-for-a-sql-server-deployed-on-a-machine" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Go to 'Security Center'</li>
+<li>Under 'Resource security hygiene', click on 'Recommendations'</li>
+<li>Click on one of the controls that you think is for a SQL server (eg: 'Vulnerability on your SQL server machines should be mediated)<ul>
+<li>Click on the specific recommendation</li>
+<li>Click on one of the VAs</li>
+<li>Scroll down to affected resources, click on the interested database</li>
+</ul>
+</li>
+</ul>
+<h4 id="these-paths-dont-work">These paths don't work:<a class="headerlink" href="#these-paths-dont-work" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Go to 'Security Center'</li>
+<li>Under 'Resource security hygiene', in 'Resource health by severity', there might be a 'Data Storage and Resources'</li>
+<li>Once you click on it, there might be a 'SQL' tab with a list of deployed SQL servers</li>
+<li>Once you click on the interested database, there should be a section called Recommendations</li>
+<li>Click on the recommendations only to see a error screen that makes you question why Microsoft sucks. </li>
 </ul>
 <h3 id="assessment-rules">Assessment Rules<a class="headerlink" href="#assessment-rules" title="Permanent link">&para;</a></h3>
 <ul>
@@ -700,17 +829,18 @@
 </ul>
 <h3 id="va1051">VA1051<a class="headerlink" href="#va1051" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Name: VA1051: AUTO_CLOSE should be disabled on all databases</li>
-<li>Summary and "why care" for dummies: SQL Servers might have a ton of databases.If AUTO_CLOSE is true for all of them, they'll go "offline" when a app is not using them. Let's say your app needs to authenticate a user so it'll need the database to re-start, set everything up and then eventually shut down. If this happens for a lot of users for a lot of databases on the same server, the server will get overwhelmed with the requests and just crash. </li>
-<li>Risk Level: Medium</li>
-<li>Description: The AUTO_CLOSE option specifies whether the database shuts down cleanly and frees resources after the last user exits. This rule checks that this option is disabled on all databases.</li>
-<li>Impact: Databases marked with AUTO_CLOSE allows the DB to be closed if there are no active connections. In the case of particularly contained databases, the authentication of users occurs within teh database itself, so the database must be opened every time to authenticate a user. Frequent opening/closing of the database consumes additional resources and may contribute to denial of service attack. </li>
-<li>How to check if your database has AUTO_CLOSE on: <ul>
-<li>Right click Database-&gt;Properties</li>
+<li><strong>Name:</strong> VA1051: AUTO_CLOSE should be disabled on all databases</li>
+<li><strong>Summary and "why care" for dummies:</strong> SQL Servers might have a ton of databases.If AUTO_CLOSE is true for all of them, they'll go "offline" when a app is not using them. Let's say your app needs to authenticate a user so it'll need the database to re-start, set everything up and then eventually shut down. If this happens for a lot of users for a lot of databases on the same server, the server will get overwhelmed with the requests and just crash. </li>
+<li><strong>Risk Level:</strong> Medium</li>
+<li><strong>Benchmark:</strong> CIS v1.0.0-08-11-2017:2.16, FedRAMP</li>
+<li><strong>Description:</strong> The AUTO_CLOSE option specifies whether the database shuts down cleanly and frees resources after the last user exits. This rule checks that this option is disabled on all databases.</li>
+<li><strong>Impact:</strong> Databases marked with AUTO_CLOSE allows the DB to be closed if there are no active connections. In the case of particularly contained databases, the authentication of users occurs within teh database itself, so the database must be opened every time to authenticate a user. Frequent opening/closing of the database consumes additional resources and may contribute to denial of service attack. </li>
+<li><strong>How to check if you db is affected:</strong> <ul>
+<li>In SSMS, Right click Database-&gt;Properties</li>
 <li>Options page and then under Automatic, if Auto Close is 'True', then it's enabled. </li>
 </ul>
 </li>
-<li>Bulk query to find all problem databases: </li>
+<li><strong>Bulk query to find all problem databases:</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="k">CASE</span>
     <span class="k">WHEN</span> <span class="k">EXISTS</span> <span class="p">(</span>
@@ -724,13 +854,145 @@
 
 
 <ul>
-<li>Remediation Steps/Script: <ul>
+<li><strong>Remediation Steps/Script:</strong><ul>
 <li>Change Auto Close in Options to 'False'</li>
 <li>Remediation Script: </li>
 </ul>
 </li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="k">ALTER</span> <span class="k">DATABASE</span> <span class="p">[</span><span class="n">yourDatabaseName</span><span class="p">]</span> <span class="k">SET</span> <span class="n">AUTO_CLOSE</span> <span class="k">OFF</span>
+</code></pre></div>
+
+
+<h3 id="va1219">VA1219<a class="headerlink" href="#va1219" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name:</strong> VA1219: Transparent data encryption should be enabled</li>
+<li><strong>Summary and "why care" for dummies:</strong> If TDE isn't being done, any backups, etc are encrypted when stored on the computer. So if a malicious person gets access to your computer, they won't be able to decrypt the backups/logs, etc without a key. </li>
+<li><strong>Risk Level:</strong> Medium</li>
+<li><strong>Description:</strong> Transparent data encryption (TDE) helps protect against the threat of malicious activity by performing real-time encryption and decryption of the database, associated backups, and transaction log files ‘at rest’, without requiring changes to the application. This rule checks that TDE is enabled on the database.</li>
+<li><strong>Impact:</strong> Transparent Data Encryption (TDE) protects data ‘at rest’, meaning the data and log files are encrypted when stored on disk.</li>
+<li><strong>How to check if you db is affected:</strong></li>
+<li><strong>Bulk query to find all problem databases:</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="ow">EXISTS</span><span class="w"></span>
+<span class="p">(</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">databases</span><span class="w"></span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">db_name</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="ow">AND</span><span class="w"> </span><span class="n">is_encrypted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="o">[</span><span class="n">Violation</span><span class="o">]</span><span class="w"></span>
+</code></pre></div>
+
+
+<ul>
+<li><strong>Remediation Steps/Script:</strong></li>
+<li>Unmanaged SQL servers: <ul>
+<li>Enable TDE on the affected database. Please follow the instructions on <a href="https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption">https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption</a></li>
+</ul>
+</li>
+<li>Azure SQL VM: <ul>
+<li>Security section is disabled. So....I don't know</li>
+</ul>
+</li>
+<li>Azure Managed Database: <ul>
+<li>Login to Portal</li>
+<li>Search for 'Azure SQL' or 'SQL databases' or whatever Azure calls it that day</li>
+<li>Choose the interested database</li>
+<li>On left, click on Security</li>
+<li>Click on 'Transparent data encryption'</li>
+<li>Set Data encryption to ON</li>
+<li>Click on Save</li>
+</ul>
+</li>
+</ul>
+<h3 id="va1287">VA1287<a class="headerlink" href="#va1287" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name:</strong> VA1287: Sensitive data columns should be classified  </li>
+<li><strong>Summary and "why care" for dummies:</strong> Some columns might have sensitive data that you want to run reports on later. Therefore, if they have metadata that flags these columns, it's easier to run these reports in case you care. </li>
+<li><strong>Risk Level:</strong> </li>
+<li><strong>Description:</strong> This rule discovers and characterizes potentially sensitive data in the database. The result is a collection of sensitive database columns, which should be reviewed and classified using SQL Data Discovery &amp; Classification. This allows database columns to be persistently labeled according to their sensitivity, which enables tracking (auditing) the use of classified data and creating reports. If your sensitive database columns are unprotected, you should also consider applying one of SQL Database’s built-in security capabilities to restrict access to and protect your sensitive data.</li>
+<li><strong>Impact:</strong> The data residing in your database can have varying levels of business and privacy sensitivity. It is important to be aware of the location of your most sensitive data elements, so that their access can be monitored and tracked. SQL Data Discovery &amp; Classification enables you to assign a distinct classification label to each database column and persist this information as column metadata within the database. This classification metadata can then be used for tracking and monitoring objectives. In addition, access to sensitive data should be more tightly controlled. Built-in SQL security capabilities like Always Encrypted, Dynamic Data Masking, and Row-Level Security can be used to control access and protect data.</li>
+<li><strong>How to check if you db is affected:</strong><ul>
+<li>Run the VA. If your columns have emails, dates, etc, it'll probably get flagged</li>
+</ul>
+</li>
+<li><strong>Find all problem databases:</strong><ul>
+<li>Review the identified list of potentially sensitive columns and apply classifications where relevant via the Classify Data task of the database. If none of the identified columns actually represent sensitive elements in your database, you can set them as your approved baseline to acknowledge their status and to prevent them from being identified again. In addition, apply column-level data protection security measures where appropriate: Always Encrypted — keeps sensitive data columns encrypted on the server side (‘https://go.microsoft.com/fwlink/?linkid=862688&#8217;) or Dynamic Data Masking — limits sensitive data exposure by dynamically masking it to non-privileged users when data is returned from the server to the client (‘https://go.microsoft.com/fwlink/?linkid=524331&#8217;). You can also use Row Level Security to restrict access to data rows by creating a security policy based on characteristics of the user executing a query (‘https://go.microsoft.com/fwlink/?linkid=862687&#8217;).</li>
+</ul>
+</li>
+<li><strong>Remediation Steps/Script:</strong><ul>
+<li>Run VA on your specific database to get remediation script but review each one!<ul>
+<li>It's stupid enough to think a date is for a Credit card and that an PK id is Financial info or National ID. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1">--Todo - add what kind of scripts might be generated in terms of what labels you can add yourself</span>
+</code></pre></div>
+
+
+<h3 id="va2109">VA2109<a class="headerlink" href="#va2109" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name:</strong>  </li>
+<li><strong>Summary and "why care" for dummies:</strong></li>
+<li><strong>Risk Level:</strong> </li>
+<li><strong>Description:</strong> </li>
+<li><strong>Impact:</strong></li>
+<li><strong>How to check if you db is affected:</strong></li>
+<li><strong>Bulk query to find all problem databases:</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+
+<ul>
+<li><strong>Remediation Steps/Script:</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+
+<h3 id="va1286">VA1286<a class="headerlink" href="#va1286" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name:</strong>  </li>
+<li><strong>Summary and "why care" for dummies:</strong></li>
+<li><strong>Risk Level:</strong> </li>
+<li><strong>Description:</strong> </li>
+<li><strong>Impact:</strong></li>
+<li><strong>How to check if you db is affected:</strong></li>
+<li><strong>Bulk query to find all problem databases:</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+
+<ul>
+<li><strong>Remediation Steps/Script:</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+
+<h3 id="va">VA<a class="headerlink" href="#va" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Name:</strong>  </li>
+<li><strong>Summary and "why care" for dummies:</strong></li>
+<li><strong>Risk Level:</strong> </li>
+<li><strong>Description:</strong> </li>
+<li><strong>Impact:</strong></li>
+<li><strong>How to check if you db is affected:</strong></li>
+<li><strong>Bulk query to find all problem databases:</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+
+<ul>
+<li><strong>Remediation Steps/Script:</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
                 
                   
@@ -740,7 +1002,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 14, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2020</span>
     
   </small>
 </div>
