@@ -870,8 +870,7 @@
 <li><strong>Summary and "why care" for dummies:</strong> If TDE isn't being done, any backups, etc are encrypted when stored on the computer. So if a malicious person gets access to your computer, they won't be able to decrypt the backups/logs, etc without a key. </li>
 <li><strong>Risk Level:</strong> Medium</li>
 <li><strong>Description:</strong> Transparent data encryption (TDE) helps protect against the threat of malicious activity by performing real-time encryption and decryption of the database, associated backups, and transaction log files ‘at rest’, without requiring changes to the application. This rule checks that TDE is enabled on the database.</li>
-<li><strong>Impact:</strong> Transparent Data Encryption (TDE) protects data ‘at rest’, meaning the data and log files are encrypted when stored on disk.</li>
-<li><strong>How to check if you db is affected:</strong></li>
+<li><strong>Impact:</strong> Transparent Data Encryption (TDE) protects data ‘at rest’, meaning the data and log files are encrypted when stored on disk.    </li>
 <li><strong>Bulk query to find all problem databases:</strong></li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="ow">EXISTS</span><span class="w"></span>
@@ -917,10 +916,7 @@
 <li>Run the VA. If your columns have emails, dates, etc, it'll probably get flagged</li>
 </ul>
 </li>
-<li><strong>Find all problem databases:</strong><ul>
-<li>Review the identified list of potentially sensitive columns and apply classifications where relevant via the Classify Data task of the database. If none of the identified columns actually represent sensitive elements in your database, you can set them as your approved baseline to acknowledge their status and to prevent them from being identified again. In addition, apply column-level data protection security measures where appropriate: Always Encrypted — keeps sensitive data columns encrypted on the server side (‘https://go.microsoft.com/fwlink/?linkid=862688&#8217;) or Dynamic Data Masking — limits sensitive data exposure by dynamically masking it to non-privileged users when data is returned from the server to the client (‘https://go.microsoft.com/fwlink/?linkid=524331&#8217;). You can also use Row Level Security to restrict access to data rows by creating a security policy based on characteristics of the user executing a query (‘https://go.microsoft.com/fwlink/?linkid=862687&#8217;).</li>
-</ul>
-</li>
+<li><strong>Find all problem databases:</strong> Review the identified list of potentially sensitive columns and apply classifications where relevant via the Classify Data task of the database. If none of the identified columns actually represent sensitive elements in your database, you can set them as your approved baseline to acknowledge their status and to prevent them from being identified again. In addition, apply column-level data protection security measures where appropriate: Always Encrypted — keeps sensitive data columns encrypted on the server side (‘<a href="https://go.microsoft.com/fwlink/?linkid=862688&amp;#8217">https://go.microsoft.com/fwlink/?linkid=862688&amp;#8217</a>;) or Dynamic Data Masking — limits sensitive data exposure by dynamically masking it to non-privileged users when data is returned from the server to the client (‘<a href="https://go.microsoft.com/fwlink/?linkid=524331&amp;#8217">https://go.microsoft.com/fwlink/?linkid=524331&amp;#8217</a>;). You can also use Row Level Security to restrict access to data rows by creating a security policy based on characteristics of the user executing a query (‘<a href="https://go.microsoft.com/fwlink/?linkid=862687&#8217;">https://go.microsoft.com/fwlink/?linkid=862687&#8217;</a>).</li>
 <li><strong>Remediation Steps/Script:</strong><ul>
 <li>Run VA on your specific database to get remediation script but review each one!<ul>
 <li>It's stupid enough to think a date is for a Credit card and that an PK id is Financial info or National ID. </li>
@@ -1002,7 +998,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2020</span>
     
   </small>
 </div>

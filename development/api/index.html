@@ -528,6 +528,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#designing-a-restful-api" class="md-nav__link">
+    Designing a RESTful API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#api-developmentdocumentationtesting-tools" class="md-nav__link">
     API Development+Documentation+Testing Tools
   </a>
@@ -668,6 +675,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#designing-a-restful-api" class="md-nav__link">
+    Designing a RESTful API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#api-developmentdocumentationtesting-tools" class="md-nav__link">
     API Development+Documentation+Testing Tools
   </a>
@@ -801,13 +815,22 @@
 </ul>
 <h3 id="response-status-codes">Response Status Codes<a class="headerlink" href="#response-status-codes" title="Permanent link">&para;</a></h3>
 <ul>
+<li>For a huge list:<ul>
+<li><a href="https://httpstatuses.com/">https://httpstatuses.com/</a></li>
+<li><a href="http://webconcepts.info/concepts/http-status-code/">http://webconcepts.info/concepts/http-status-code/</a></li>
+</ul>
+</li>
+<li>For a internet themed lis: https://http.cat/</li>
 <li><code>100-199</code>: Informational<ul>
 <li>rare but exist</li>
 </ul>
 </li>
 <li><code>200-299</code>: Success <ul>
 <li>what you want was done successfully</li>
-<li>200 is common</li>
+<li>200 is most common</li>
+<li><code>200(OK)</code> - The request completed successfully.</li>
+<li><code>201(Created)</code> - The request has been fulfilled and resulted in a new resource being created successfully.</li>
+<li><code>202(Accepted)</code> - The request has been accepted for processing, but the processing has not been completed.   </li>
 </ul>
 </li>
 <li><code>300-399</code>: Redirection <ul>
@@ -821,17 +844,88 @@
 <li>authentication issues</li>
 <li>wrong query string in uri</li>
 <li>uri doesn't exist</li>
+<li><code>400(Bad Request)</code> - The request is invalid. Check error msg and try again </li>
+<li><code>401(Unauthorized)</code> - The request requires authentication, or your authentication was invalid </li>
+<li><code>403(Forbidden)</code> - You are authenticated, but do not have permission to access the resource </li>
+<li><code>404(Not Found)</code> - The resource does not exist</li>
+<li><code>429(Too Many requests)</code> - You are being rate limited, try making fewer requests </li>
 </ul>
 </li>
 <li><code>500-599</code>: Server Errors<ul>
-<li>Server say: Its not you, it's me</li>
+<li>Server says: Its not you, it's me</li>
+<li><code>500(Server Error)</code> - Service unavailable, try again later </li>
 </ul>
 </li>
 </ul>
 <h2 id="rest">REST<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h2>
 <ul>
-<li>REST - REpresentational State Transfer</li>
-<li>RESTful apis means you're using REST (might not be 100% but you're trying)</li>
+<li>REST - REpresentational State Transfer<ul>
+<li>Made up by Roy Fielding's doctoral dissertation</li>
+<li>An architectural style for designing apis in the hope that you're productive</li>
+</ul>
+</li>
+<li>"RESTful" apis means you're using REST (might not be 100% but you're trying)<ul>
+<li>Theory doesn't always consider reality so stay focused on the practical advantages of why you want to represent data this way</li>
+</ul>
+</li>
+<li>Concepts involve: <ul>
+<li>Use a Client and Server</li>
+<li>Make sure Server Requests are stateless</li>
+<li>Requests should support caheability</li>
+<li>Requests should use Uniform Interface (URI)</li>
+</ul>
+</li>
+</ul>
+<h2 id="designing-a-restful-api">Designing a RESTful API<a class="headerlink" href="#designing-a-restful-api" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Eg pubic Resful API: https://api.github.com/</li>
+<li>Based on requirements, things to consider in terms of what the client has to request: <ul>
+<li>HTTP Verbs</li>
+<li>Paths to Resources (URI)<ul>
+<li>Plural Nouns<ul>
+<li>Why: essentially giving an indication about what resource group is in this container that holders the info the the client might or might not want. </li>
+<li>Resource groups can be one or more within the context of the app. Eg: <ul>
+<li>Why: Separating resource groups down to the entity level doesn't always make sense. Eg, Milestones don't exist on their own within projects. </li>
+<li>Resource 1: Projects, Milestones within that project, Milestones with a discrete level of completion. </li>
+<li>Resource 2: Proposals</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Each resource will need an unique identifier to be able to drill in. Could be PK or any unique integer, string, UUID, username, etc<ul>
+<li>Will result in unique url for each resource (the Identifier in URI)</li>
+<li>Why: Assuming client want to drill in, a descriptive path variable makes it easier to know what it is that you're getting info about instead of a random number. </li>
+<li>Eg: https://api.github.com/users/prasunakunasani<ul>
+<li>Id here is the username while the PK is probably different within the app</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Using /api path before resource to indicate the api<ul>
+<li>Eg: http:/arest.me/api/sites</li>
+<li>Why: the assumption is that you have other site resources being served at /. If the app is just an api and nothing else, this might not matter          </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Optional query strings for formatting, sorting, filtering<ul>
+<li>eg: nouns?page=1, nouns?sort=id</li>
+<li>Shouldn't be mandatory<ul>
+<li>Why: Think about how annoying it is when you want to access some data and you're asked to first figure out how many pages you want to see, sorting,etc before you see anything.  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Headers</li>
+<li>Request Body</li>
+</ul>
+</li>
+<li>Things to considering when responding: <ul>
+<li>Status Code</li>
+<li>Headers</li>
+<li>Response Body</li>
+</ul>
+</li>
 </ul>
 <h2 id="api-developmentdocumentationtesting-tools">API Development+Documentation+Testing Tools<a class="headerlink" href="#api-developmentdocumentationtesting-tools" title="Permanent link">&para;</a></h2>
 <h3 id="curl">Curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
@@ -877,7 +971,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2020</span>
     
   </small>
 </div>
