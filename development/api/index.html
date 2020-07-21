@@ -788,10 +788,23 @@
 </ul>
 <h3 id="request-verbs">Request Verbs<a class="headerlink" href="#request-verbs" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>GET</code>: Requesting resource(s)</li>
-<li><code>POST</code>: Creating resource(s)</li>
-<li><code>PUT</code>: Update resource</li>
-<li><code>PATCH</code>: Update partial resource</li>
+<li>An indication of what you want to do on a specific request</li>
+<li><code>GET</code>: Read resource(s)<ul>
+<li>Wants to retrieve a or a collection of resources (eg: Site or sites)</li>
+</ul>
+</li>
+<li><code>POST</code>: Create resource(s)<ul>
+<li>Adding/creating a new resource </li>
+</ul>
+</li>
+<li><code>PUT</code>: Update resource<ul>
+<li>Updating a resource by taking in information that might've changed (the whole object) and updating the existing resource to reflect the new data</li>
+</ul>
+</li>
+<li><code>PATCH</code>: Update partial resource<ul>
+<li>Updating a resource with some data changes (partial object not not the whole resource)</li>
+</ul>
+</li>
 <li><code>DELETE</code>: Delete Resource</li>
 <li><code>OPTION</code>: </li>
 </ul>
@@ -880,7 +893,6 @@
 <ul>
 <li>Eg pubic Resful API: https://api.github.com/</li>
 <li>Based on requirements, things to consider in terms of what the client has to request: <ul>
-<li>HTTP Verbs</li>
 <li>Paths to Resources (URI)<ul>
 <li>Plural Nouns<ul>
 <li>Why: essentially giving an indication about what resource group is in this container that holders the info the the client might or might not want. </li>
@@ -895,15 +907,25 @@
 <li>Each resource will need an unique identifier to be able to drill in. Could be PK or any unique integer, string, UUID, username, etc<ul>
 <li>Will result in unique url for each resource (the Identifier in URI)</li>
 <li>Why: Assuming client want to drill in, a descriptive path variable makes it easier to know what it is that you're getting info about instead of a random number. </li>
-<li>Eg: https://api.github.com/users/prasunakunasani<ul>
+<li>Eg: <a href="https://api.github.com/users/prasunakunasani">https://api.github.com/users/prasunakunasani</a><ul>
 <li>Id here is the username while the PK is probably different within the app</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Using /api path before resource to indicate the api<ul>
-<li>Eg: http:/arest.me/api/sites</li>
+<li>Eg: <http:/arest.me/api/sites></li>
 <li>Why: the assumption is that you have other site resources being served at /. If the app is just an api and nothing else, this might not matter          </li>
+</ul>
+</li>
+<li>HTTP Verbs<ul>
+<li>Think of these like the use cases you want to let your user do. So, only support the verbs that make sense. </li>
+<li>Eg: (kinda not sure the right way regarding updating in bulk...better to send 100 post request with their own status code or send a bulk one? or send bulk but return an array of status codes?)
+| Request resource                                       | GET                  | POST                                                                                  | PUT                                           | Delete                                                                                                                     |
+|--------------------------------------------------------|----------------------|---------------------------------------------------------------------------------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| /<your-resource>-collection                            | return list          | create single resource                                                                | Update a single item or a collection          | Error - Try to think of a single use case <br>where you want to delete an entire collection without filters. <br>In prod.  |
+| /<your-resource>-collection/{id}                       | return just the item | Error - Doesn't make sense to create a resource <br>within a specific resource        | Update the single item                        | Delete the item                                                                                                            |
+| /<your-resource>-collection/<your-resource>-collection | return list          | create multiple sub-resource assume they relate <br>(even if there's no entity in db) | Update a collection or a whole sub collection | Error                                                                                                                      |     </li>
 </ul>
 </li>
 </ul>
@@ -921,9 +943,15 @@
 </ul>
 </li>
 <li>Things to considering when responding: <ul>
-<li>Status Code</li>
+<li>Status Code<ul>
+<li>Should reflect what the status codes usually mean. Eg, 201 if a resource is created</li>
+</ul>
+</li>
 <li>Headers</li>
-<li>Response Body</li>
+<li>Response Body<ul>
+<li>Might send errors that are clearer to the user. Eg. when a mandatory field is empty or missing</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -971,7 +999,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2020</span>
     
   </small>
 </div>
