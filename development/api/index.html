@@ -11,7 +11,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.3">
     
     
       
@@ -19,7 +19,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.947af8d5.min.css">
       
       
     
@@ -264,6 +264,18 @@
   <li class="md-nav__item">
     <a href="../../accessibility/accessibility/" title="Web Accessibility" class="md-nav__link">
       Web Accessibility
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../accessibility/design/" title="Design Choices" class="md-nav__link">
+      Design Choices
     </a>
   </li>
 
@@ -586,6 +598,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git/" title="Git" class="md-nav__link">
+      Git
+    </a>
   </li>
 
         
@@ -918,38 +942,131 @@
 <li>Why: the assumption is that you have other site resources being served at /. If the app is just an api and nothing else, this might not matter          </li>
 </ul>
 </li>
-<li>HTTP Verbs<ul>
+<li>
+<p>HTTP Verbs</p>
+<ul>
 <li>Think of these like the use cases you want to let your user do. So, only support the verbs that make sense. </li>
-<li>Eg: (kinda not sure the right way regarding updating in bulk...better to send 100 post request with their own status code or send a bulk one? or send bulk but return an array of status codes?)
-| Request resource                                       | GET                  | POST                                                                                  | PUT                                           | Delete                                                                                                                     |
-|--------------------------------------------------------|----------------------|---------------------------------------------------------------------------------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-| /<your-resource>-collection                            | return list          | create single resource                                                                | Update a single item or a collection          | Error - Try to think of a single use case <br>where you want to delete an entire collection without filters. <br>In prod.  |
-| /<your-resource>-collection/{id}                       | return just the item | Error - Doesn't make sense to create a resource <br>within a specific resource        | Update the single item                        | Delete the item                                                                                                            |
-| /<your-resource>-collection/<your-resource>-collection | return list          | create multiple sub-resource assume they relate <br>(even if there's no entity in db) | Update a collection or a whole sub collection | Error                                                                                                                      |     </li>
+<li>Eg: (kinda not sure the right way regarding updating in bulk...better to send 100 post request with their own status code or send a bulk one? or send bulk but return an array of status codes?)</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>Request resource</th>
+<th>GET</th>
+<th>POST</th>
+<th>PUT</th>
+<th>Delete</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/<your-resource>-collection</td>
+<td>return list</td>
+<td>create single resource</td>
+<td>Update a single item or a collection</td>
+<td>Error - Try to think of a single use case <br>where you want to delete an entire collection without filters. <br>In prod.</td>
+</tr>
+<tr>
+<td>/<your-resource>-collection/{id}</td>
+<td>return just the item</td>
+<td>Error - Doesn't make sense to create a resource <br>within a specific resource</td>
+<td>Update the single item</td>
+<td>Delete the item</td>
+</tr>
+<tr>
+<td>/<your-resource>-collection/<your-resource>-collection</td>
+<td>return list</td>
+<td>create multiple sub-resource assume they relate <br>(even if there's no entity in db)</td>
+<td>Update a collection or a whole sub collection</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>* Optional query strings for formatting, sorting, filtering</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* eg: nouns?page=1, nouns?sort=id</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* Shouldn't be mandatory</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* Why: Think about how annoying it is when you want to access some data and you're asked to first figure out how many pages you want to see, sorting,etc before you see anything.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* Headers</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* Request Body</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* Things to considering when responding:</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* Status Code</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* Should reflect what the status codes usually mean. Eg, 201 if a resource is created</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* Headers</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* Response Body</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* Might send errors that are clearer to the user. Eg. when a mandatory field is empty or missing</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </li>
-</ul>
-</li>
-<li>Optional query strings for formatting, sorting, filtering<ul>
-<li>eg: nouns?page=1, nouns?sort=id</li>
-<li>Shouldn't be mandatory<ul>
-<li>Why: Think about how annoying it is when you want to access some data and you're asked to first figure out how many pages you want to see, sorting,etc before you see anything.  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Headers</li>
-<li>Request Body</li>
-</ul>
-</li>
-<li>Things to considering when responding: <ul>
-<li>Status Code<ul>
-<li>Should reflect what the status codes usually mean. Eg, 201 if a resource is created</li>
-</ul>
-</li>
-<li>Headers</li>
-<li>Response Body<ul>
-<li>Might send errors that are clearer to the user. Eg. when a mandatory field is empty or missing</li>
 </ul>
 </li>
 </ul>
@@ -999,7 +1116,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 8, 2020</span>
     
   </small>
 </div>
@@ -1037,6 +1154,20 @@
           </a>
         
         
+          <a href="../git/" title="Git" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Git
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
       </nav>
     </div>
   
@@ -1056,15 +1187,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.c3dc8c49.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f9edbbd5.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.8e2cddea.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
