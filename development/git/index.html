@@ -477,12 +477,44 @@
 </ul>
 </li>
 </ul>
+<h1 id="version-control-system">Version Control System<a class="headerlink" href="#version-control-system" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Advantages: <ul>
+<li>Detailed History - Version control gives a detailed history of project such as changes, messages, dates, etc<ul>
+<li>Useful for code or anything else. Similar to saving multiple version of same file</li>
+<li>It's not useful as a backup if the whole repo is on one disk</li>
+</ul>
+</li>
+<li>Manage Multiple Versions of a project at the same time<ul>
+<li>Using Branching and <code>git checkout</code> to switch between branches. <code>git merge master</code> to pull in any common changes fixes</li>
+<li>Eg: Have different version of an app that sometimes stay same but one has more features</li>
+</ul>
+</li>
+<li>Sharing Code between developers and/or teams<ul>
+<li>Using Branching and merging</li>
+<li>Eg: Developer A and Developer B create their own feature branches and merge back to master<ul>
+<li>To avoid huge conflicts at merging, practice should be to merge back into main branch often</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Coordinating Teamwork <ul>
+<li>Can use Issue trackers or Bug trackers and integrate with source code</li>
+<li>Can use CI/CD servers that connect to repo</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Project - your code project that holds files with source code, config files, etc. </li>
 <li>Repository - Storage area for git that gets created when you do <code>git init</code> and stores snapshots of project</li>
-<li>Index - </li>
+<li>Indexing - </li>
 <li>Commit - A snapshot of the project</li>
+<li>Merging - </li>
+<li>Master branch - </li>
+<li>Conflict - Changes to the same lines in the same files when merging from different branches</li>
 </ul>
 <h1 id="git-usual-cycle">Git usual cycle<a class="headerlink" href="#git-usual-cycle" title="Permanent link">&para;</a></h1>
 <ul>
@@ -534,7 +566,16 @@
 </li>
 <li><code>checkout e5f9a833</code><ul>
 <li>can time travel and get content of a previous or future commit and put it in our file system to test, etc</li>
-<li>aka git switch </li>
+<li>aka git switch</li>
+</ul>
+</li>
+<li><code>branch newBranchName</code><ul>
+<li>creates a branch with the commits from the branch you were just in</li>
+</ul>
+</li>
+<li><code>merge branchName</code><ul>
+<li>can to the branch you want to merge changes into and then replace <code>branchname</code> with any branch changes you want to bring in. </li>
+<li>Eg. <code>git merge master</code> into a feature branch</li>
 </ul>
 </li>
 </ul>
