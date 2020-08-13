@@ -427,9 +427,83 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Git
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="Git" class="md-nav__link md-nav__link--active">
       Git
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-control-system-advantages" class="md-nav__link">
+    Version Control System Advantages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-vs-subversion" class="md-nav__link">
+    Git Vs Subversion
+  </a>
+  
+    <nav class="md-nav" aria-label="Git Vs Subversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-server-version-control-eg-subversion" class="md-nav__link">
+    Client-Server Version Control (Eg. Subversion)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-version-control-eg-git" class="md-nav__link">
+    Distributed Version Control (Eg. Git)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-not-use-git" class="md-nav__link">
+    When to not use git
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    Terminology
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -456,6 +530,64 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-control-system-advantages" class="md-nav__link">
+    Version Control System Advantages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-vs-subversion" class="md-nav__link">
+    Git Vs Subversion
+  </a>
+  
+    <nav class="md-nav" aria-label="Git Vs Subversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-server-version-control-eg-subversion" class="md-nav__link">
+    Client-Server Version Control (Eg. Subversion)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-version-control-eg-git" class="md-nav__link">
+    Distributed Version Control (Eg. Git)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-not-use-git" class="md-nav__link">
+    When to not use git
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    Terminology
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -477,9 +609,8 @@
 </ul>
 </li>
 </ul>
-<h1 id="version-control-system">Version Control System<a class="headerlink" href="#version-control-system" title="Permanent link">&para;</a></h1>
+<h2 id="version-control-system-advantages">Version Control System Advantages<a class="headerlink" href="#version-control-system-advantages" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Advantages: <ul>
 <li>Detailed History - Version control gives a detailed history of project such as changes, messages, dates, etc<ul>
 <li>Useful for code or anything else. Similar to saving multiple version of same file</li>
 <li>It's not useful as a backup if the whole repo is on one disk</li>
@@ -504,9 +635,31 @@
 </ul>
 </li>
 </ul>
-</li>
+<h2 id="git-vs-subversion">Git Vs Subversion<a class="headerlink" href="#git-vs-subversion" title="Permanent link">&para;</a></h2>
+<h3 id="client-server-version-control-eg-subversion">Client-Server Version Control (Eg. Subversion)<a class="headerlink" href="#client-server-version-control-eg-subversion" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The repository is on the server somewhere remotely and all developers connect to it<ul>
+<li>Each developer has a copy of the repository files. </li>
+<li>To view history, etc, developer needs an active connection to the server</li>
 </ul>
-<h1 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h1>
+</li>
+<li>Once the files are changed, before committing, need to get latest changes from server, fix conflict and then send the entire thing to server</li>
+</ul>
+<h3 id="distributed-version-control-eg-git">Distributed Version Control (Eg. Git)<a class="headerlink" href="#distributed-version-control-eg-git" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The repository is some cloned with a hidden directory (<code>ls -a</code>) called <code>.git</code><ul>
+<li>Entire history is in that cloned directory</li>
+</ul>
+</li>
+<li>Developer can commit, create branches, etc locally. </li>
+<li>The local copy is connected to the remote repository through remotes.  </li>
+</ul>
+<h2 id="when-to-not-use-git">When to not use git<a class="headerlink" href="#when-to-not-use-git" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Git isn't good for large binary files, etc pictures, videos</li>
+<li>Initially less user friendly and needs some training</li>
+</ul>
+<h2 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Project - your code project that holds files with source code, config files, etc. </li>
 <li>Repository - Storage area for git that gets created when you do <code>git init</code> and stores snapshots of project</li>
@@ -515,6 +668,7 @@
 <li>Merging - </li>
 <li>Master branch - </li>
 <li>Conflict - Changes to the same lines in the same files when merging from different branches</li>
+<li>Remotes - A link from the local repository to the shared repository</li>
 </ul>
 <h1 id="git-usual-cycle">Git usual cycle<a class="headerlink" href="#git-usual-cycle" title="Permanent link">&para;</a></h1>
 <ul>
@@ -529,7 +683,7 @@
 <ul>
 <li><a href="https://git-scm.com/">https://git-scm.com/</a> </li>
 </ul>
-<h1 id="git-commands">Git Commands<a class="headerlink" href="#git-commands" title="Permanent link">&para;</a></h1>
+<h2 id="git-commands">Git Commands<a class="headerlink" href="#git-commands" title="Permanent link">&para;</a></h2>
 <ul>
 <li>All commands need to start with <code>git</code>   <ul>
 <li>eg: <code>git tree</code></li>
@@ -547,7 +701,7 @@
 <li>tells git which files need to be indexed so they're ready to go for the next commit. In this case, all files in the current directory (<code>.</code>) </li>
 </ul>
 </li>
-<li><code>commit -m "MESSAGe you want to write to remember what the snapshot is for"</code><ul>
+<li><code>commit -m "some message you want to write to remember what the snapshot is for"</code><ul>
 <li>creates a snapshot of all files that have been indexed</li>
 </ul>
 </li>
@@ -557,6 +711,10 @@
 </li>
 <li><code>status</code><ul>
 <li>gives current status of the project such as which files have been modified since last commit</li>
+</ul>
+</li>
+<li><code>clone &lt;serverNameThtEndsInGit&gt;</code><ul>
+<li>copies the entire repository including commits, history, etc</li>
 </ul>
 </li>
 <li><code>diff e5f9a833 c9fc877089</code><ul>
@@ -573,8 +731,19 @@
 <li>creates a branch with the commits from the branch you were just in</li>
 </ul>
 </li>
+<li><code>pull</code><ul>
+<li>get changes from remote repository to local repository</li>
+</ul>
+</li>
+<li><code>push</code><ul>
+<li>push changes from local repository to remote repository</li>
+</ul>
+</li>
 <li><code>merge branchName</code><ul>
-<li>can to the branch you want to merge changes into and then replace <code>branchname</code> with any branch changes you want to bring in. </li>
+<li>used to merge changes from branchName to the branch you're in<ul>
+<li>should go to the branch you want to merge changes into and then replace <code>branchname</code> with any branch changes you want to bring in. </li>
+</ul>
+</li>
 <li>Eg. <code>git merge master</code> into a feature branch</li>
 </ul>
 </li>
@@ -587,7 +756,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 10, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 13, 2020</span>
     
   </small>
 </div>
