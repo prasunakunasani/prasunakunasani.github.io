@@ -1,0 +1,1345 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Apache - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#apache" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Notes" class="md-header-nav__button md-logo" aria-label="Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Notes
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Apache
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Notes" class="md-nav__button md-logo" aria-label="Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Accessibility
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Accessibility" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Accessibility
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../accessibility/accessibility/" class="md-nav__link">
+      Web Accessibility
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../accessibility/design/" class="md-nav__link">
+      Design Choices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../accessibility/guidelines/" class="md-nav__link">
+      WCAG Guidelines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../accessibility/roleInSoftware/" class="md-nav__link">
+      Accessibility and Software Development
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../accessibility/tools/" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../accessibility/wet/" class="md-nav__link">
+      Web Experience Toolkit (WET)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Databases
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Databases" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../databases/sqlserver/" class="md-nav__link">
+      MS SQL Server
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Development
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Apache
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Apache
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prereqs" class="md-nav__link">
+    Prereqs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    Terminology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-http-server" class="md-nav__link">
+    Apache HTTP Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Apache HTTP Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-level-configuration-not-recommended" class="md-nav__link">
+    Directory Level configuration (not recommended)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-configuration-recommended" class="md-nav__link">
+    Server Configuration (recommended)
+  </a>
+  
+    <nav class="md-nav" aria-label="Server Configuration (recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directive-containers" class="md-nav__link">
+    Directive Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serverroot-directive" class="md-nav__link">
+    ServerRoot directive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-hosting" class="md-nav__link">
+    Virtual Hosting
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Hosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtualhost-directive" class="md-nav__link">
+    VirtualHost directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listen-directive" class="md-nav__link">
+    Listen directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentroot-directive" class="md-nav__link">
+    DocumentRoot directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identityusergroup-directive" class="md-nav__link">
+    Identity(User/Group) directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadmodule-directive" class="md-nav__link">
+    LoadModule directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servername-directive" class="md-nav__link">
+    ServerName directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directoryindex-directive" class="md-nav__link">
+    DirectoryIndex directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ifmodule-container" class="md-nav__link">
+    IfModule container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include-directive" class="md-nav__link">
+    Include directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-process-settings" class="md-nav__link">
+    Multiple Process Settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-links" class="md-nav__link">
+    Useful links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#currently-dont-care-about" class="md-nav__link">
+    Currently don't care about:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api/" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../aspdotnet/" class="md-nav__link">
+      ASP.Net 4 Web Forms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git/" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Security
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Security" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        <span class="md-nav__icon md-icon"></span>
+        Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security/roleInSoftware/" class="md-nav__link">
+      Security and Software Development
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security/security/" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prereqs" class="md-nav__link">
+    Prereqs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    Terminology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-http-server" class="md-nav__link">
+    Apache HTTP Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Apache HTTP Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-level-configuration-not-recommended" class="md-nav__link">
+    Directory Level configuration (not recommended)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-configuration-recommended" class="md-nav__link">
+    Server Configuration (recommended)
+  </a>
+  
+    <nav class="md-nav" aria-label="Server Configuration (recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directive-containers" class="md-nav__link">
+    Directive Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serverroot-directive" class="md-nav__link">
+    ServerRoot directive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-hosting" class="md-nav__link">
+    Virtual Hosting
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Hosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtualhost-directive" class="md-nav__link">
+    VirtualHost directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listen-directive" class="md-nav__link">
+    Listen directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentroot-directive" class="md-nav__link">
+    DocumentRoot directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identityusergroup-directive" class="md-nav__link">
+    Identity(User/Group) directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadmodule-directive" class="md-nav__link">
+    LoadModule directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servername-directive" class="md-nav__link">
+    ServerName directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directoryindex-directive" class="md-nav__link">
+    DirectoryIndex directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ifmodule-container" class="md-nav__link">
+    IfModule container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include-directive" class="md-nav__link">
+    Include directive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-process-settings" class="md-nav__link">
+    Multiple Process Settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-links" class="md-nav__link">
+    Useful links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#currently-dont-care-about" class="md-nav__link">
+    Currently don't care about:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="apache">Apache<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h1>
+<h2 id="prereqs">Prereqs<a class="headerlink" href="#prereqs" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Networking fundamentals like hostname and IP, etc</li>
+</ul>
+<h2 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Secure Shell (SSH) - secure way to remotely logining into through command line and executing commands. Services runs on port 22 on guest. </li>
+<li>SSH Client - For mac, Terminal. For Windows, PuTTY</li>
+<li>Hypervisor - Software that allows guest VMs to use resources of host and hardware. Eg. VirtualBox</li>
+<li>localhost - A network name for the computer you're already on. </li>
+<li>httpd - Is a service that's serviced by Apache and runs on port 80 on guest. </li>
+<li>apachectl - It's a script that comes bundled with apache that can be used to manage and interact with Apache service. </li>
+<li>root - Linux sudo user</li>
+<li>sudo - command that provides elevated privileges to regular accounts</li>
+<li><code>service</code> - a wrapper on apachectl and the prefered way</li>
+</ul>
+<h2 id="apache-http-server">Apache HTTP Server<a class="headerlink" href="#apache-http-server" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A web server application that delivers web content that can be accessed through the internet. <ul>
+<li>Eg: HTML, CSS, JS</li>
+</ul>
+</li>
+<li>Open Source project</li>
+<li>Modular so can add modules for specific use cases such as SSL, load balancing, etc</li>
+<li>Apache is a parent process but a whole bunch of child processes where each child can serve dif page at the same time</li>
+</ul>
+<h3 id="directory-level-configuration-not-recommended">Directory Level configuration (not recommended)<a class="headerlink" href="#directory-level-configuration-not-recommended" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Apache configuration can be in a plaint text file <code>.htaccess</code></li>
+<li>Can be used to configure what can and cannot be changed within a directory<ul>
+<li>Useful for shared hosts, untrusted user (?how)</li>
+</ul>
+</li>
+<li><code>htaccess</code> are read at every request (so no restart needed)<ul>
+<li>underprivileged users can access this</li>
+</ul>
+</li>
+<li>Disadvantages: <ul>
+<li>slower than server config files cause' the configuration is searched for and read for every request</li>
+<li>increases security risk of site if someone is looking to exploit the system (?how)</li>
+</ul>
+</li>
+</ul>
+<h3 id="server-configuration-recommended">Server Configuration (recommended)<a class="headerlink" href="#server-configuration-recommended" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Apache's configuration is stored in place text files</li>
+<li>Primary config file is named <strong>httpd.conf</strong><ul>
+<li>Changes are recognized when server is started or re-started, including <code>graceful</code></li>
+<li>Location is set at compile time and depends on Distribution unless overridden (rare)<ul>
+<li>Fedora and CentOS - /etc/httpd/conf/httpd.conf<ul>
+<li>monolithic layout unless stuff is split up and included using include</li>
+</ul>
+</li>
+<li>Debian and Ubuntu - /etc/apache2/apache2.conf<ul>
+<li>usually setup as one small config file per site or per group of configuration</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="directive-containers">Directive Containers<a class="headerlink" href="#directive-containers" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Configuration is a bunch of directives (instructions) one per line<ul>
+<li>Unless in &lt;&gt; brackets. Then treat it like XML with a start and end tag grouped together<ul>
+<li>This helps restrict the scope of the directives they contain</li>
+</ul>
+</li>
+<li>If there's information following a directive, then that's the argument<ul>
+<li>Eg <code>Order allow,deny</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Some are case-insensitive and some are case-sensitive so best practice is to consider them case-sensitive</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span>Directory /var/www/cgi-bin&gt;
+    AllowOverride none
+    Require all denied
+<span class="p">&lt;</span>/Directory&gt;
+</code></pre></div>
+
+<h4 id="serverroot-directive">ServerRoot directive<a class="headerlink" href="#serverroot-directive" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The directory that will have the configuration and log files</li>
+<li>Eg: <code>ServerRoot "/etc/httpd"</code></li>
+</ul>
+<h2 id="virtual-hosting">Virtual Hosting<a class="headerlink" href="#virtual-hosting" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Virtual Hosting is used when you want to host multiple domain names on a single server or pool of servers</li>
+<li></li>
+</ul>
+<h4 id="virtualhost-directive">VirtualHost directive<a class="headerlink" href="#virtualhost-directive" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Virtual Hosting the the ability to serve content for multiple domains from the same server<ul>
+<li>Apache's feature</li>
+<li>Commonly used by shared web hosts (??)</li>
+</ul>
+</li>
+<li>2 types: <ul>
+<li>Name-Based Virtual Hosting<ul>
+<li>Routes requests based on domain name<ul>
+<li>Issues might come with multiple SSL where the server doesn`t know which to use</li>
+<li>Fully qualified domain name isn't recommended by Apache</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IP Based Virtual Hosting<ul>
+<li>Separate IP per site</li>
+<li>Solves SSL challenges but costlier and more technical overhead involved<ul>
+<li>Eg: <code>VirtualHost 10.0.2.56:80</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Arguments can be something like <code>Virtual Host *:8071</code> meaning that the virtual host is only listening on port 8071<ul>
+<li><code>ServerAdmin username@example.com</code><ul>
+<li>sets the contact info used for error messages returned to client</li>
+<li>If the server is using custom error messages, this isn't needed</li>
+</ul>
+</li>
+<li><code>ServerName blah.example.com</code> - Imp!<ul>
+<li>Typically set system wide by Virtual Host should set this too</li>
+<li>Uniquely identifies name based virtual host and is the qualified domain name of the server</li>
+</ul>
+</li>
+<li><code>&lt;Directory /blah/blah2/&gt;</code><ul>
+<li>Doesn't have to be set within Virtual Host. Might just be set system wide </li>
+<li>Argument is the directory path that contains the html<ul>
+<li>Directives that control permissions: <ul>
+<li><code>Order allow deny</code><ul>
+<li>controls the default access site and controls the order in which the allow and deny directives are evaluated </li>
+</ul>
+</li>
+<li><code>Allow from all/hostName/IPaddress/variable</code><ul>
+<li>meaning acess allowed from 'all'</li>
+</ul>
+</li>
+<li><code>Require all granted</code><ul>
+<li>meaning all users are granted access unconditionally</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Without these, Apache wont' know what the permissions are and won't serve content from the directory</li>
+</ul>
+</li>
+<li><code>&lt;DocumentRoot /blah/blah2&gt;</code><ul>
+<li>directory that Apache uses to server files </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://httpd.apache.org/docs/2.4/vhosts/examples.html">https://httpd.apache.org/docs/2.4/vhosts/examples.html</a></li>
+</ul>
+<h4 id="listen-directive">Listen directive<a class="headerlink" href="#listen-directive" title="Permanent link">&para;</a></h4>
+<ul>
+<li>This directive tells Apache to listen for connection requests on a specified port such as 80</li>
+<li>Eg: <code>Listen 12.34.56.78:80</code> or <code>Listen 8072</code></li>
+</ul>
+<h4 id="documentroot-directive">DocumentRoot directive<a class="headerlink" href="#documentroot-directive" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Defines the top level directory of the web site</li>
+<li>Eg: <code>DocumentRoot "/var/www/html"</code> or <code>DocumentRoot "/app/apache/htdocs"</code> </li>
+<li>If the url used by user is <code>https://blah.com/blah.html</code>, the file will be served from <code>/var/www/html/blah.html</code></li>
+</ul>
+<h4 id="identityusergroup-directive">Identity(User/Group) directive<a class="headerlink" href="#identityusergroup-directive" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Apache needs a user identity that it can run as to perform access contal checks to the file system</li>
+<li>When it starts, it runs as root and bind to port 80 (privilege port)<ul>
+<li>ports less than 1024 can only be bound and used by root</li>
+</ul>
+</li>
+<li>Child processes that span take up the User and group identity</li>
+<li>Eg: <code>User apache</code> or <code>User daemon</code></li>
+<li>Eg: <code>Group apache</code> or <code>Group daemon</code></li>
+<li>apache account and group are added when the httpd package is installed</li>
+</ul>
+<h4 id="loadmodule-directive">LoadModule directive<a class="headerlink" href="#loadmodule-directive" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The default config file loads a large number of modules<ul>
+<li>Centos will load a load so apache has a rich feature set</li>
+<li>The secure way is to start with an empty list and load only the modules you need as your site evolves</li>
+</ul>
+</li>
+<li>Eg: <code>Load Module ldap_module modules/mod_ldap.so</code></li>
+</ul>
+<h4 id="servername-directive">ServerName directive<a class="headerlink" href="#servername-directive" title="Permanent link">&para;</a></h4>
+<ul>
+<li>sets the hostname and port that the server uses to identify itself before redirecting<ul>
+<li>Eg: <code>ServerName www.example.com</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="directoryindex-directive">DirectoryIndex directive<a class="headerlink" href="#directoryindex-directive" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Give info on which file Apache will look for in the directory as the trailing part in the url</li>
+<li>Eg: <code>DirectoryIndex index.html</code></li>
+</ul>
+<h4 id="ifmodule-container">IfModule container<a class="headerlink" href="#ifmodule-container" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Anything inside will only take effect if whatever's after the IfModule is loaded</li>
+</ul>
+<h4 id="include-directive">Include directive<a class="headerlink" href="#include-directive" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Will load and pick up configuration from an extra conf file. </li>
+<li>Eg: <code>Include blah.conf</code></li>
+</ul>
+<h3 id="multiple-process-settings">Multiple Process Settings<a class="headerlink" href="#multiple-process-settings" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Apache tends to have spare pool of processes ready to pick up to improve performance/response times</li>
+<li>The settings that control the size of the pool are: <ul>
+<li>StartServers - num of server processes to start</li>
+<li>MinSpareServers - min num of server processes which are kept spare </li>
+<li>MaxSpareServers - max num of server processes which are kept spare</li>
+<li>ServerLimit - max value for MaxClients for the lifetime of the server</li>
+<li>MaxClients - maximum number of server processes allowed to start</li>
+<li>MaxRequestsPerChild - max num of requests a server process serves</li>
+</ul>
+</li>
+<li>Don't change these settings unless you know what you're doing</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span>IfModule prefork.c&gt;
+StartServers 8
+MinSpareServers 5
+MaxSpareServers 20
+ServerLimit 256
+MaxClients 256
+MaxRequestsPerChild 4000
+<span class="p">&lt;</span>/IfModule&gt;
+</code></pre></div>
+
+<h2 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Examine error log located at <code>/var/log/httpd/error_log</code> for installation failures</li>
+<li>Check if multiple processes are listening on port 80 in case you previosuly installed a dif web server</li>
+<li>If SELinux is enabled, try disabled it</li>
+</ul>
+<h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Apache documentation: <ul>
+<li><a href="http://httpd.apache.org/docs/current/">http://httpd.apache.org/docs/current/</a></li>
+</ul>
+</li>
+<li>Apache Configuration how to<ul>
+<li><a href="http://httpd.apache.org/docs/current/configuring.html">http://httpd.apache.org/docs/current/configuring.html</a></li>
+</ul>
+</li>
+<li>Apache directives<ul>
+<li><a href="http://httpd.apache.org/docs/current/mod/directives">http://httpd.apache.org/docs/current/mod/directives</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Find the configuration files. <ul>
+<li>Shows list of configuration settings including the <strong>HTTPD_ROOT</strong> (the default location of configuration) and <strong>SERVER_CONFIG_FILE</strong></li>
+<li><code>apachectl -V</code></li>
+</ul>
+</li>
+<li>Check to see if configuration file exists<ul>
+<li><code>ls -la REPLACEWITH_httpd_rOOT/REPLACEWITH_server_config_File</code></li>
+</ul>
+</li>
+<li>Check permissions of a directory<ul>
+<li><code>ls -lR</code></li>
+</ul>
+</li>
+<li>Brute force way to find configuration file<ul>
+<li>Find every single file on that matches the string<ul>
+<li><code>find / | grep "httpd\.conf"</code> or </li>
+<li><code>find / | grep "apache2\.conf"</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Install Apache<ul>
+<li>For CentOS: <ul>
+<li><code>yum install httpd</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Install Apache documentation<ul>
+<li>For CentOS: <ul>
+<li><code>yum install httpd-manual</code></li>
+</ul>
+</li>
+<li>Will be available at ``localhost/manual</li>
+</ul>
+</li>
+<li>Check if Apache is installed: <ul>
+<li><code>rpm -qa | grep httpd</code> or</li>
+<li><code>dpkg -l | grep apache</code> </li>
+</ul>
+</li>
+<li>Check which version of Linux distribution is installed<ul>
+<li><code>cat /etc/issue</code> or</li>
+<li><code>cat /etc/*-release</code></li>
+</ul>
+</li>
+<li>To connect using ssh client: <code>ssh -p2222 user@localhost</code><ul>
+<li>Replace 2222 with port name and localhost with host name</li>
+</ul>
+</li>
+<li>See what Apache is doing - <code>status</code><ul>
+<li>Eg: <code>apachectl status</code><ul>
+<li>Gives info on Apache server that's running and the number of child servers</li>
+</ul>
+</li>
+<li>Eg: <code>service httpd status</code>?</li>
+</ul>
+</li>
+<li>Start parent web server - <code>start</code><ul>
+<li><code>apachectl -k start</code></li>
+<li><code>/etc/init.d/apache2 start</code></li>
+<li><code>service httpd start</code></li>
+</ul>
+</li>
+<li>Have service starts at boot time<ul>
+<li><code>chkconfig httpd on</code> </li>
+</ul>
+</li>
+<li>Look at current boot time settings<ul>
+<li><code>chkconfig httpd --list</code></li>
+</ul>
+</li>
+<li>See list of processes listening on http TCP port (specifically the ones listening on port 80)<ul>
+<li><code>lsof -i | grep http</code><ul>
+<li>-i is to see open ports</li>
+<li>output eg: <ul>
+<li><code>httpd 27710 root TCP *: http (LISTEN)</code></li>
+<li><code>httpd 27712 apache TCP *: http (LISTEN)</code></li>
+<li><code>httpd 27713 apache TCP *: http (LISTEN)</code></li>
+<li><code>httpd 27714 apache TCP *: http (LISTEN)</code></li>
+<li><code>httpd 27715 apache TCP *: http (LISTEN)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Stop parent web server and parent process immediately with all connections terminating - <code>stop</code>
+    *<code>apachectl -k stop</code><ul>
+<li><code>/etc/init.d/apache2 stop</code></li>
+</ul>
+</li>
+<li>Stop parent process after the requests in progress are completed<ul>
+<li><code>graceful-stop</code></li>
+</ul>
+</li>
+<li>Keep the parent alive while children are killed off where the configuration is re-read and children are re-spawned with new config<ul>
+<li><code>service httpd restart</code></li>
+</ul>
+</li>
+<li>Restart the server after children are done doing what they're doing before doing a graceful shutdown and config re-read - <code>graceful</code><ul>
+<li><code>service apache2 graceful</code> aka <code>reload</code></li>
+</ul>
+</li>
+<li>Page through contents of config file<ul>
+<li><code>less fileNameAndLocation</code>. Use space to go through</li>
+</ul>
+</li>
+<li>Find matches for a certain Directive<ul>
+<li><code>grep -Ri DirectiveName</code></li>
+</ul>
+</li>
+<li>Reboot Linux VM using root account: <ul>
+<li><code>sudo reboot</code><ul>
+<li>simple way to force vm to pick up changes assuming apache restart isn't working</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Test configuration for syntax errors<ul>
+<li><code>apachectl -t</code></li>
+</ul>
+</li>
+<li>List all Virtual Hosts and details: <ul>
+<li><code>apachectl -t -D DUMP_VHOSTS</code></li>
+</ul>
+</li>
+<li>Check if SELinux is enabled:<ul>
+<li><code>sestatus</code><ul>
+<li>If enforcing then any action prohibted by selinux policies will be prohibited</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Turn off SELinux temporarily to permissive instead of enforcing:<ul>
+<li><code>setenforce 0</code></li>
+</ul>
+</li>
+<li>Filter out comments in .conf file to see true configuration<ul>
+<li><code>grep -v '^#' /etc/httpd/conf/httpd.conf | less</code></li>
+</ul>
+</li>
+<li>Change owner of directory to apache for all files<ul>
+<li><code>chown -R apache:apache *</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="currently-dont-care-about">Currently don't care about:<a class="headerlink" href="#currently-dont-care-about" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Creating publicly accessible content on the apache web server</li>
+</ul>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 10, 2020</span>
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../databases/sqlserver/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                MS SQL Server
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../api/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                API
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['tabs', 'instant'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
